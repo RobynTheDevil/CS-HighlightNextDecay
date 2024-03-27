@@ -3,7 +3,8 @@
     {
       "id": "en",
       "uilabels$add": {
-        "UI_OPT_HIGHLIGHTNEXTDECAY": "Highlight next decaying card",
+        "UI_OPT_HIGHLIGHTNEXTCARD": "Highlight next decaying card",
+        "UI_OPT_HIGHLIGHTNEXTVERB": "Highlight next completing verb",
         "UI_OPT_YES": "Yes",
         "UI_OPT_NO": "No"
       }

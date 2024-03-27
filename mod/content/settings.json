@@ -1,9 +1,22 @@
 {
     "settings": [
         {
-            "id": "HighlightNextDecay",
+            "id": "HighlightNextCard",
             "tabid": "UI_GAMEPLAY",
-            "hint": "UI_OPT_HIGHLIGHTNEXTDECAY",
+            "hint": "UI_OPT_HIGHLIGHTNEXTCARD",
+            "minvalue": 0,
+            "maxvalue": 1,
+            "defaultvalue": "1",
+            "datatype": "Int32",
+            "valuelabels": {
+                "0": "UI_OPT_NO",
+                "1": "UI_OPT_YES"
+            }
+        },
+        {
+            "id": "HighlightNextVerb",
+            "tabid": "UI_GAMEPLAY",
+            "hint": "UI_OPT_HIGHLIGHTNEXTVERB",
             "minvalue": 0,
             "maxvalue": 1,
             "defaultvalue": "1",
