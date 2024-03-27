@@ -1,0 +1,12 @@
+{
+  "cultures": [
+    {
+      "id": "en",
+      "uilabels$add": {
+        "UI_OPT_HIGHLIGHTNEXTDECAY": "Highlight next decaying card",
+        "UI_OPT_YES": "Yes",
+        "UI_OPT_NO": "No"
+      }
+    }
+  ]
+}
