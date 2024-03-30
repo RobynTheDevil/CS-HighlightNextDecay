@@ -14,6 +14,7 @@ using HarmonyLib;
 
 public class HighlightNextDecay : MonoBehaviour
 {
+    public static bool started = false;
     //public static PatchTracker showHighlight {get; private set;}
     public static ValueTracker<bool> cardHighlight {get; private set;}
     public static ValueTracker<bool> verbHighlight {get; private set;}
@@ -30,21 +31,26 @@ public class HighlightNextDecay : MonoBehaviour
 	}
 
     public void Start() => SceneManager.sceneLoaded += Load;
+
     public void OnDestroy() => SceneManager.sceneLoaded -= Load;
 
     public void Load(Scene scene, LoadSceneMode mode) {
-        if (!(scene.name == "S3Menu"))
-            return;
         try
         {
-            cardHighlight = new ValueTracker<bool>("HighlightNextCard", new bool[2] {false, true}, UpdateHighlights);
-            verbHighlight = new ValueTracker<bool>("HighlightNextVerb", new bool[2] {false, true}, UpdateHighlights);
-            NoonUtility.Log("HighlightNextDecay: Trackers Started");
+            if (!started) {
+                cardHighlight = new ValueTracker<bool>("HighlightNextCard", new bool[2] {false, true}, UpdateHighlights);
+                verbHighlight = new ValueTracker<bool>("HighlightNextVerb", new bool[2] {false, true}, UpdateHighlights);
+                started = true;
+            } else {
+                cardHighlight.Subscribe();
+                verbHighlight.Subscribe();
+            }
         }
         catch (Exception ex)
         {
           NoonUtility.LogException(ex);
         }
+        NoonUtility.Log("HighlightNextDecay: Trackers Started");
     }
 
     public void Update()
