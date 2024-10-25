@@ -124,8 +124,11 @@ public class HighlightNextDecay : MonoBehaviour
                 {
                     smallest_lifetime = lifetime;
                 }
-                if (!is_glowing || (current != UIStyle.GetGlowColor(UIStyle.GlowPurpose.OnHover)
-                    && current != UIStyle.GetGlowColor(UIStyle.GlowPurpose.Default)))
+                if (!is_glowing || (
+                    current != UIStyle.GetGlowColor(UIStyle.GlowPurpose.OnHover) &&
+                    current != UIStyle.GetGlowColor(UIStyle.GlowPurpose.Default) &&
+                    current != UIStyle.GetGlowColor(UIStyle.GlowPurpose.Hint)
+                ))
                 {
                     object[] args;
                     if (current != setColor)
